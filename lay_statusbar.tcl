@@ -11,10 +11,10 @@ proc ::flutiou::ui::statusbar::setup {w} {
     #
     # Frame containers
     #
-    ttk::frame $w.progress   -borderwidth 1 -relief groove
-    ttk::frame $w.modes      -borderwidth 1 -relief groove
-    ttk::frame $w.short_info -borderwidth 1 -relief groove
-    ttk::frame $w.track_info -borderwidth 1 -relief groove
+    ttk::frame $w.progress   -borderwidth 1 -relief flat
+    ttk::frame $w.modes      -borderwidth 1 -relief flat
+    ttk::frame $w.short_info -borderwidth 1 -relief flat
+    ttk::frame $w.track_info -borderwidth 1 -relief flat
     pack $w.progress   -side right -padx "$fpad 0" -fill y
     pack $w.modes      -side right -padx "$fpad 0" -fill y
     pack $w.short_info -side right -padx "$fpad 0" -fill y
