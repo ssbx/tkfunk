@@ -1,0 +1,8 @@
+- animer le browser, vertical avec canva qui fait défiler
+- animer le paned window, remplacer pane window avec un canva
+- animer la couleur des boutons selector
+- animer le déroulement de la playlist, pareil, avec canva si pas
+possible avec les options par defaut
+
+faire tout configurable, et eventuellement désactiver pour
+meilleure performances.

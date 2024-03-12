@@ -1,0 +1,10 @@
+
+set col1 rgb(92, 97, 108)      -fg -focuscolor
+set col2 rgb(255, 255, 255)    -window -selectfg
+set col3 rgb(251, 252, 252)    -checklight (unused -disabledbg)
+set col4 rgb(245, 246, 247)    -bg
+set col4 rgb(169, 172, 178)    -disabledfg
+set col5 rgb(82, 148, 226)     -selectbg
+
+set but           rgb(211,216,226)
+set button_border rgb(183,192,211)
