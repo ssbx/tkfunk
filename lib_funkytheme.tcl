@@ -669,7 +669,8 @@ proc ::funky::theme::editor {} {
     wm title    . "Funky Editor"
     wm geometry . "1050x650+300+300"
     bind all <Escape> exit
-    ::funky::theme::create "arctic"
+    ::funky::theme::create arctic
+    ttk::style theme use arctic
 
     #
     # Root with scrollbars
