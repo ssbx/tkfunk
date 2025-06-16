@@ -7,7 +7,6 @@ namespace eval ::funky::theme {
     variable default_dir    "lib_funkytheme"
     variable user_dir       ""
     variable src_dir        "lib_funkytheme/src"
-
     variable COL
     variable IMG
 }

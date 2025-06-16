@@ -19,26 +19,27 @@ namespace eval ::flutiou {
 namespace import ::msgcat::mc
 
 # init and set theme TODO
-set use "ll"
-if {$use == "old"} {
-    source [file join $::flutiou::libdir u funkytheme.tcl]
-    ttk::style theme use Funky
-    . configure -background [ttk::style lookup Funky -background {} white]
-} elseif { $use == "arc"} {
-    source [file join $::flutiou::libdir trash arc.tcl]
-    ttk::style theme use arc
-    . configure -background [ttk::style lookup arc -background {} white]
+set use 0
 
-} elseif { $use == "def"} {
-    ttk::style theme use default
-    . configure -background [ttk::style lookup default -background {} white]
-} elseif { $use == "alt"} {
-    ttk::style theme use alt
-    . configure -background [ttk::style lookup alt -background {} white]
-
-} elseif { $use == "no"} {
-    puts "notheme"
-} else {
+#if {$use == "old"} {
+#    source [file join $::flutiou::libdir lib_funkytheme.tcl]
+#    ttk::style theme use Funky
+#    . configure -background [ttk::style lookup Funky -background {} white]
+#} elseif { $use == "arc"} {
+#    source [file join $::flutiou::libdir trash arc.tcl]
+#    ttk::style theme use arc
+#    . configure -background [ttk::style lookup arc -background {} white]
+#
+#} elseif { $use == "def"} {
+#    ttk::style theme use default
+#    . configure -background [ttk::style lookup default -background {} white]
+#} elseif { $use == "alt"} {
+#    ttk::style theme use alt
+#    . configure -background [ttk::style lookup alt -background {} white]
+#
+#} elseif { $use == "no"} {
+#    puts "notheme"
+#} else {
     source [file join $::flutiou::libdir lib_funkytheme.tcl]
     set themesrc     [file join $::flutiou::libdir  lib_funkytheme src]
     set themedefault [file join $::flutiou::libdir  lib_funkytheme]
@@ -47,11 +48,11 @@ if {$use == "old"} {
     set ::funky::theme::user_dir    $themehome
     set ::funky::theme::src_dir     $themesrc
 
-    ::funky::theme::create tests
-    #ttk::style theme create Flutiou -parent default -settings ::funky::theme::setup
-    ttk::style theme use tests
+    ::funky::theme::create arctic
+    #ttk::style theme create Arctic -parent default -settings ::funky::theme::setup
+    ttk::style theme use arctic
     . configure -background [ttk::style lookup tests -background {} white]
-}
+#}
 
 # custom widgets
 source [file join $::flutiou::libdir wid_extrapopup.tcl]
