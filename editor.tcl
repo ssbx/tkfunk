@@ -1,6 +1,4 @@
 
-
-
 set cols [ dict create \
  bg          #f5f6f7 \
  fg          #5c616c \
