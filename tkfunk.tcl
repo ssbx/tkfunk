@@ -961,7 +961,7 @@ proc init_defaults {} {
   set tname $::funky::theme::default_theme
   ::funky::theme::create $tname
   ttk::style theme use $tname
-  #. configure -background [ttk::style lookup tests-background {} white]
+  . configure -background [ttk::style lookup $tname -background]
 }
 
 
