@@ -1,9 +1,4 @@
-edit:
-	rm -rf ~/.flutio/themes/test.ressources
-	wish funk_edit.tcl
+pkgIndex.tcl:
+	echo "pkg_mkIndex -verbose . tkfunk.tcl" | tclsh
 
-edit2:
-	wish lib_funkytheme.tcl
 
-run:
-	./flutiou.sh
