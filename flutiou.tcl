@@ -4,6 +4,7 @@ package require msgcat      1.6
 
 namespace eval ::flutiou {
     variable libdir  [file normalize [file dirname [info script] ]]
+    variable extradir [file join $::flutiou::libdir libs]
     variable userdir [file join $::env(HOME) .flutio]
     variable images
     variable playlist_revision
@@ -14,6 +15,10 @@ namespace eval ::flutiou {
     variable player_com_err
     variable player_com_pid 0
 }
+
+lappend auto_path $::flutiou::extradir
+package require TkFunk 1.0
+package require TkFunBt 1.0
 
 # init msgcat
 namespace import ::msgcat::mc
@@ -40,18 +45,18 @@ set use 0
 #} elseif { $use == "no"} {
 #    puts "notheme"
 #} else {
-    source [file join $::flutiou::libdir lib_funkytheme.tcl]
-    set themesrc     [file join $::flutiou::libdir  lib_funkytheme src]
-    set themedefault [file join $::flutiou::libdir  lib_funkytheme]
-    set themehome    [file join $::flutiou::userdir themes]
-    set ::funky::theme::default_dir $themedefault
-    set ::funky::theme::user_dir    $themehome
-    set ::funky::theme::src_dir     $themesrc
+    #source [file join $::flutiou::libdir lib_funkytheme.tcl]
+    #set themesrc     [file join $::flutiou::libdir  lib_funkytheme src]
+    #set themedefault [file join $::flutiou::libdir  lib_funkytheme]
+    #set themehome    [file join $::flutiou::userdir themes]
+    #set ::funky::theme::default_dir $themedefault
+    #set ::funky::theme::user_dir    $themehome
+    #set ::funky::theme::src_dir     $themesrc
 
-    ::funky::theme::create arctic
+    #::funky::theme::create arctic
     #ttk::style theme create Arctic -parent default -settings ::funky::theme::setup
-    ttk::style theme use arctic
-    . configure -background [ttk::style lookup tests -background {} white]
+    #ttk::style theme use arctic
+    #. configure -background [ttk::style lookup tests -background {} white]
 #}
 
 # custom widgets
@@ -82,11 +87,11 @@ source [file join $::flutiou::libdir form_configure.tcl]
 # ui procs and libs
 source [file join $::flutiou::libdir fun_browse_files.tcl]
 source [file join $::flutiou::libdir fun_playzone.tcl]
-source [file join $::flutiou::libdir lib_filters.tcl]
-source [file join $::flutiou::libdir lib_funkytheme.tcl]
+#source [file join $::flutiou::libdir lib_filters.tcl]
+#source [file join $::flutiou::libdir lib_funkytheme.tcl]
 
 proc ::flutiou::setup_imgs {} {
-    set imgsdir [file join $::flutiou::libdir lib_icons]
+    set imgsdir [file join $::flutiou::libdir libs tkfunk icons_other]
     array set ::flutiou::images {}
     foreach f [glob -directory $imgsdir xicon-*.png] {
         set img [string replace [file tail [file rootname $f]] 0 5]
@@ -155,7 +160,7 @@ proc ::flutiou::main {} {
     #
     # load filters the playlist treeview requires it
     #
-    ::flutiou::collection::filters::setup
+    #::flutiou::collection::filters::setup
 
     #
     # This is were the actual ui is built

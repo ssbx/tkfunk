@@ -381,7 +381,7 @@ if {$::argv0 eq [info script]} {
     ttk::frame .root
     pack .root -fill both -expand 1
     ttk::label .root.head -text "hello canva"
-    set img [image create photo -file "lib_icons/xicon-small-audio-file.png" -format png]
+    set img [image create photo -file "libs/tkfunk/icons/16x15/mimetypes-audio-x-generic.png" -format png]
     set txt "Hello"
     ::w::funkybutton::funkybutton .root.canv $img $txt
 

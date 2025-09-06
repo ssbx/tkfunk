@@ -14,7 +14,8 @@ namespace eval ::flutiou::ui::playzone::procs {
 
     proc insert {tracks position} {
         variable ::flutiou::ui::playzone::playlist
-        set filters [::flutiou::collection::filters::all_filters]
+        #set filters [::flutiou::collection::filters::all_filters]
+        set filters {}
 
         foreach track $tracks {
 

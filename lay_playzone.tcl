@@ -125,7 +125,9 @@ proc ::flutiou::ui::playzone::setup_treeview {w} {
     # our columns
     #
     variable tv_columns
-    set tv_columns [::flutiou::collection::filters::all_filters]
+    #set tv_columns [::flutiou::collection::filters::all_filters]
+    set tv_columns {}
+
 
     set bg  [ttk::style lookup theme -background]
     set fg  [ttk::style lookup theme -foreground]
